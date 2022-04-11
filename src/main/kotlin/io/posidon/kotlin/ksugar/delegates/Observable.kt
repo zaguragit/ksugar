@@ -28,10 +28,3 @@ inline fun <T> Delegates.observable(initialValue: T, crossinline onChange: () ->
 
 inline fun <T : Any?> Delegates.observable(crossinline onChange: () -> Unit): ReadWriteProperty<Any?, T?> =
     observable { _, _, _ -> onChange() }
-
-
-
-
-
-inline fun <T> Delegates.observable(initialValue: T, crossinline onChange: (property: KProperty<*>, oldValue: T, newValue: T) -> Unit): ReadWriteProperty<Any?, T> =
-    observable(initialValue, onChange)
