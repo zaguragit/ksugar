@@ -1,4 +1,4 @@
-package io.posidon.kotlin.ksugar.delegates
+package io.posidon.ksugar.delegates
 
 import kotlin.properties.Delegates
 import kotlin.properties.ObservableProperty
