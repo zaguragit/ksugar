@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.6.20"
+    kotlin("jvm") version "1.6.20"
     `maven-publish`
 }
 
@@ -12,4 +12,13 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            artifactId = "library"
+            from(components["kotlin"])
+        }
+    }
 }
